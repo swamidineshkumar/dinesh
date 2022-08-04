@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +28,12 @@ return new ResponseEntity<String>(msg,HttpStatus.OK);
 	String msg="data not  added";
 	return new ResponseEntity<String>(msg,HttpStatus.OK); 
 }
+}
+@GetMapping(value="/getall" ,consumes =  "application/json",produces = "application/json")
+public ResponseEntity<List<StudentDemo>> getall(){
+	List<StudentDemo> all = serviceInt.getAll();
+	return new ResponseEntity<>(all,HttpStatus.OK);
+	
 }
 	}
 

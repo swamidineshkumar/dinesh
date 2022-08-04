@@ -23,8 +23,8 @@ private StudentRepositary studentRepositary;
 
 	@Override
 	public List<StudentDemo> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<StudentDemo> findAll = studentRepositary.findAll();
+		return findAll;
 	}
 
 	@Override
